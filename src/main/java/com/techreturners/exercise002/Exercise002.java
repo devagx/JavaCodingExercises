@@ -11,9 +11,14 @@ public class Exercise002 {
         }
     }
 
-    public boolean canWatchFilm(/* Person person, int ageLimit */) {
+    public boolean canWatchFilm(Person person, int ageLimit) {
         // Add your code here
-        return false;
+        if (person.getAge() >= ageLimit) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 }
