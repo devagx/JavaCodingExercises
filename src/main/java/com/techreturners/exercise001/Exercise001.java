@@ -2,6 +2,7 @@ package com.techreturners.exercise001;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.*;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -30,6 +31,19 @@ public class Exercise001 {
 
     public int countLinuxUsers(List<User> users) {
         // Add your code here
-        return 0;
+        int countLinuxUser = 0;
+
+        for (User user : users) {
+            if (user.getType().toUpperCase().equals("LINUX")) {
+                countLinuxUser += 1;
+            }
+        }
+
+        return countLinuxUser;
+
+        // Seems cant use lambda in this Java version, as I would have used the below
+        // code if it was possible
+        // return (int)
+        // users.stream().filter(x->x.getType().toUpperCase().equals("LINUX")).count();
     }
 }
