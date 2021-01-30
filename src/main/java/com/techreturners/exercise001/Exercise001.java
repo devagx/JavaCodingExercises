@@ -10,7 +10,7 @@ public class Exercise001 {
 
     public String generateInitials(String firstName, String lastName) {
         // Add your code here
-        return "";
+        return firstName.substring(0, 1) + "." + lastName.substring(0, 1);
     }
 
     public double addVat(double originalPrice, double vatRate) {
