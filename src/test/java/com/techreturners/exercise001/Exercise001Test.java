@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class Exercise001Test {
 
@@ -16,6 +18,55 @@ public class Exercise001Test {
         assertEquals("Hello", ex001.capitalizeWord("hello"));
         assertEquals("The quick fox", ex001.capitalizeWord("the quick fox"));
         assertEquals("Oh no, bears!!!", ex001.capitalizeWord("oh no, bears!!!"));
+        assertEquals("Oh no, bears!!!", ex001.capitalizeWord("oh no, bears!!!"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void capitalizeWord_EmptyString_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.capitalizeWord("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void capitalizeWord_NullString_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.capitalizeWord(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void generateInitials_EmptyStringParam1Param2_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.generateInitials("", "");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void generateInitials_EmptyStringParam1_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.generateInitials("", "ss");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void generateInitials_EmptyStringParam2_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.generateInitials("ss", "");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void generateInitials_NullStringParam1Param2_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.generateInitials(null, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void generateInitials_NullStringParam2_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.generateInitials("joe", null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void generateInitials_NullStringParam1_ExceptionThrown() {
+        Exercise001 ex001 = new Exercise001();
+        ex001.generateInitials(null, "bloggs");
     }
 
     @Test
@@ -55,7 +106,6 @@ public class Exercise001Test {
         User u2 = new User("Paul", "Windows 95", "Windows");
         User u3 = new User("Sheila", "CentOS 7", "Linux");
         User u4 = new User("Pedro", "Ubuntu 18.04", "Linux");
-
 
         List<User> users = new ArrayList<User>();
         users.add(u1);
