@@ -45,19 +45,6 @@ public class Exercise001 {
 
     public int countLinuxUsers(List<User> users) {
         // Add your code here
-        int countLinuxUser = 0;
-
-        for (User user : users) {
-            if (user.getType().toUpperCase().equals("LINUX")) {
-                countLinuxUser += 1;
-            }
-        }
-
-        return countLinuxUser;
-
-        // Seems cant use lambda in this Java version, as I would have used the below
-        // code if it was possible
-        // return (int)
-        // users.stream().filter(x->x.getType().toUpperCase().equals("LINUX")).count();
+         return (int) users.stream().filter(x->x.getType().toUpperCase().equals("LINUX")).count();
     }
 }
