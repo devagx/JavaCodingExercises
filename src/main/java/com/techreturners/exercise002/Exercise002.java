@@ -4,11 +4,7 @@ public class Exercise002 {
 
     public boolean isFromManchester(Person person) {
         // Add your code here
-        if (person.getCity().toUpperCase().equals("MANCHESTER")) {
-            return true;
-        } else {
-            return false;
-        }
+        return person.getCity().toUpperCase().equals("MANCHESTER");
     }
 
     public boolean canWatchFilm(Person person, int ageLimit) {
